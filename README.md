@@ -16,7 +16,7 @@ I tried to have most my tools Open sourced. Here the actual list of the tools I 
   - Silicone to create the epoxy mold from 3D printed parts
   - Epoxy and compatible dye.
   - Magnet for the pieces (help the electro magnet to "attach" to them)
-
+  - Electro Magnet to "attach" from the CoreXY
 
 I will ajust this list when all the project is done (dimensions, etc...)
 

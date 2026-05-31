@@ -37,3 +37,13 @@ Advice I learned the wrong way :
 - If you create a mold for the pieces, be awar that 3D print mold (contenant of the overall final mold) is a pain to detach. The horizontals "stripes" of the 3D print can make it really hard to remove.
   My tips is to create a mold in multiple part. Forget about a "vase" like mold. Either you will break the contenant, either you'll destroy the silicon mold. I will give my model for it.
 - If you want to create your own mold for your own pieces : Plastic can float on top of silicon. So keep that in mind when making it.
+
+
+### STEP 3 :
+>[!CAUTION]
+> Those step are'nt done yet. I'm still finishing the pieces part, it take a lot of time to design, print, polish, create the mold, use the epoxy...
+
+Creating the CoreXY. I want to make this as soon as possible because it's the technical barrier. It's my first project so as a newbie I think it can be important to make this first.
+There is a lot of moving part, electornic etc...
+
+I'm still in reflexion about using a simple Arduino or an ESP32.

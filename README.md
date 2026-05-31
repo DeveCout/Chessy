@@ -1,6 +1,7 @@
 # Chessy
 Chessy is a personnal project about creating an automatic playing chess board. It will include the .step files to create pieces in epoxy, the board with his CoreXY and the step to creat it yourself
-/!\ The project is still in developpment. I did'nt finished it yet so I need to add advice, ajust my files etc.../!\
+> [!NOTE]
+> The project is still in developpment. I did'nt finished it yet so I need to add advice, ajust my files etc...
 
 ## Presentation
 

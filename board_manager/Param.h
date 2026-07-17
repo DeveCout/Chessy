@@ -1,7 +1,10 @@
+#pragma once
+#include <Board.h>
+
 // ----- Wifi
 
-const char* wifi_ssid = "Freebox-58D941";
-const char* wifi_password = "ChanelCasseCouilleDePremiere";
+const char* wifi_ssid = "ssid";
+const char* wifi_password = "password";
 int maximal_timeout_seconds = 10;
 
 // ----- PIN OUT
@@ -22,14 +25,19 @@ const float step_number_full_circle = 360 / true_step_angle;
 
 QueueHandle_t chessMove_list;
 const int chessMove_list_max_size = 50;
-const char* api_lichess = "https://lichess.org/api/tv/rapid/feed"
+const char* api_lichess = "https://lichess.org/api/tv/bullet/feed";
+
+// ----- DEBUG LED api
+
+const bool use_debug_led_api = true;
+int duration_led_milli = 1000;
 
 Board board;
 
 // --- DEBUG TOUCH ----
 
 bool flag_debug_touch = false;
-int debug_touch_treshold = 50;
+int debug_touch_treshold = 100;
 
 // --- LOGIC ---
 

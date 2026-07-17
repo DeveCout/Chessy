@@ -1,9 +1,8 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <Arduino_JSON.h>
-#include <Board.h>
 #include <Param.h>
-
+#include <ChessAPI.h>
 
 int get_seconds_since_start(){
   int seconds_elapsed = ((millis() - millis_startup) / 1000);
@@ -43,6 +42,9 @@ void setup() {
   delay(100);
   setup_wifi();
   board = Board("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+
+
+  ChessAPI::init();
 }
 
 void data_log(){
@@ -64,6 +66,16 @@ void data_log(){
 
   board.print_board();
 
+  ChessMove *move = new ChessMove();
+  if(ChessAPI::get_next_move(move))
+  {
+    Serial.println(move->original_move);
+    Serial.println(move->start_pos_x);
+    Serial.println(move->start_pos_y);
+    Serial.println(move->end_pos_x);
+    Serial.println(move->end_pos_y);
+  }
+  delete move;
   Serial.println("--------------------]");
 }
 
@@ -80,22 +92,24 @@ void manage_debug_touch(){
 
 void loop() {
   
-  if(micros() - last_step_motor_1 > duration_micro_between_step )
-  {
-    last_step_motor_1 = micros();
-    digitalWrite(pin_motor_1_step,HIGH);
-    digitalWrite(pin_motor_1_step,LOW);
-    debug_led = !debug_led;
-    if (debug_led){
-      digitalWrite(pin_debug_led,HIGH);
-    }else{
-      digitalWrite(pin_debug_led,LOW);
-    }
-  }
+  // if(micros() - last_step_motor_1 > duration_micro_between_step )
+  // {
+  //   last_step_motor_1 = micros();
+  //   digitalWrite(pin_motor_1_step,HIGH);
+  //   digitalWrite(pin_motor_1_step,LOW);
+  //   debug_led = !debug_led;
+  //   if (debug_led){
+  //     digitalWrite(pin_debug_led,HIGH);
+  //   }else{
+  //     digitalWrite(pin_debug_led,LOW);
+  //   }
+  // }
 
-//Test changement direciton
+  //Test changement direciton
 
-  digitalWrite(pin_motor_1_direction,get_seconds_since_start() % 2);
+  // digitalWrite(pin_motor_1_direction,get_seconds_since_start() % 2);
+
+  vTaskDelay(pdMS_TO_TICKS(10));
 
   manage_debug_touch();
 }
